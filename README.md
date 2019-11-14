@@ -24,6 +24,19 @@ C:\Projects\wireguard-windows> amd64\wireguard.exe
 
 Since WireGuard requires the Wintun driver to be installed, and this generally requires a valid Microsoft signature, you may benefit from first installing a release of WireGuard for Windows from the official [wireguard.com](https://www.wireguard.com/install/) builds, which bundles a Microsoft-signed Wintun, and then subsequently run your own wireguard.exe. Alternatively, you can craft your own installer using the `quickinstall.bat` script.
 
+### Optional: Localizing
+
+To translate WireGuard UI to your language:
+
+1. Upgrade `resources.rc` accordingly. Follow the pattern.
+2. Add your language ID to the `//go:generate go run golang.org/x/text/cmd/gotext ... -lang=en,<your language ID>...` line in `main.go`.
+3. `set WIREGUARD_GENERATE_LOCALES=yes`
+4. Build.
+5. `copy locales\<your language ID>\out.gotext.json locales\<your language ID>\messages.gotext.json`
+6. Translate `messages.gotext.json`. See other language message files how to translate messages and how to tackle plural.
+7. Build and test.
+8. Repeat from 6.
+
 ### Optional: Creating the Installer
 
 The installer build script will take care of downloading, verifying, and extracting the right versions of the various dependencies:
