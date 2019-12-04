@@ -6,7 +6,7 @@ require (
 	golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413
 	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553
 	golang.org/x/sys v0.0.0-20191210023423-ac6580df4449
-	golang.org/x/text v0.3.2
+	golang.org/x/text v0.3.3-0.20191122225017-cbf43d21aaeb
 	golang.zx2c4.com/wireguard v0.0.20191013-0.20191128101113-ddfad453cf22
 )
 
